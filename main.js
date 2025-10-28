@@ -5,7 +5,6 @@ const DATA_TYPES = {
   ジャンル: "category",
   おすすめ度: "number",
 };
-
 const DISPLAIES_FOR_SP = {
   タイトル: "primary",
   著者: "none",
@@ -13,6 +12,7 @@ const DISPLAIES_FOR_SP = {
   ジャンル: "secondary",
   おすすめ度: "secondary",
 };
+
 const numeralColumns = {};
 const categoricalColumns = {};
 
@@ -110,7 +110,7 @@ function createTableContents(records) {
     const th = document.createElement("th");
     th.textContent = key; // 各ヘッダーセルにカラム名を設定
     th.dataset.type = DATA_TYPES[key]; // データ型情報を dataset に与える
-      th.dataset.spDisplay = DISPLAIES_FOR_SP[key];
+    th.dataset.spDisplay = DISPLAIES_FOR_SP[key]; // スマホの表示情報を dataset に与える
     th.addEventListener("click", function () {
       setSort(th, records);
     });
@@ -147,7 +147,7 @@ function createTableBodyRows(tbody, records, keyword) {
 
     for (let key in record) {
       const td = document.createElement("td");
-      td.dataset.spDisplay = DISPLAIES_FOR_SP[key];
+      td.dataset.spDisplay = DISPLAIES_FOR_SP[key]; // スマホの表示情報を dataset に与える
       const text = record[key];
 
       // keywordが指定されている場合、キーワードを強調表示する
@@ -326,13 +326,4 @@ function drawGraph(values) {
     }px)`;
     // バーの高さを設定（値に基づいてスケーリング）
     div.style.height = `${value * heightUnit}px`;
-    div.className = "bar"; // バーのCSSクラスを設定
-    graphContainer.append(div); // 作成したバーをコンテナに追加
-
-    // バーのラベル（カテゴリ名）を表示
-    const label = document.createElement("div"); // ラベル用のdiv要素を作成
-    label.textContent = key; // ラベルにカテゴリ名を設定
-    label.className = "label"; // ラベルのCSSクラスを設定
-    div.append(label); // ラベルをバーに追加
-  }
-}
+    div.className = "bar"; // バー
