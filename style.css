@@ -6,14 +6,14 @@ body {
   #detail {
     display: none;
   }
-	&.-showdetail {
+ &.-showdetail {
     #master {
       display: none;
     }
     #detail {
       display: block;
     }
-	}
+ }
 }
 
 table {
@@ -109,9 +109,8 @@ th {
     font-size: 0.8em;
   } */
 }
-
 @media (max-width: 600px) {
-	  table {
+  table {
     width: 100%;
   }
   thead {
@@ -127,8 +126,8 @@ th, td {
   &[data-sp-display="none"] {
     display: none;
   }
-}
-	 td {
+ }
+ td {
     border: none;
     &[data-sp-display="primary"] {
       font-size: 1.2em;
@@ -141,7 +140,6 @@ th, td {
     }
   }
 }
-
 #detail {
   dl {
     border-top: solid 1px maroon;
