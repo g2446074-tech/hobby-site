@@ -131,10 +131,6 @@ function createTableBodyRows(tbody, records, keyword) {
   for (let record of records) {
     const tr = document.createElement("tr");
 
-        for (let key in record) {
-      const td = document.createElement("td");
-      td.dataset.spDisplay = DISPLAIES_FOR_SP[key]; // スマホの表示情報を dataset に与える
-      const text = record[key];
           
     // keyword（検索キーワード）が指定されている場合、レコードがキーワードを含むかチェック
     if (keyword) {
@@ -154,6 +150,7 @@ function createTableBodyRows(tbody, records, keyword) {
 
     for (let key in record) {
       const td = document.createElement("td");
+      td.dataset.spDisplay = DISPLAIES_FOR_SP[key];
       const text = record[key];
 
       // keywordが指定されている場合、キーワードを強調表示する
